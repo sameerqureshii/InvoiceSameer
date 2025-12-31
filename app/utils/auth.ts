@@ -4,6 +4,7 @@ import Nodemailer from "next-auth/providers/nodemailer"
 import prisma from "./db"
  
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  secret: process.env.AUTH_SECRET,
   adapter: PrismaAdapter(prisma),
   providers: [
     Nodemailer({
