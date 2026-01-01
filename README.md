@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# InvoiceSameer
 
-## Getting Started
+A modern, full-stack invoice management system built with Next.js 14, featuring automated email notifications, PDF generation, and a beautiful dashboard interface.
 
-First, run the development server:
+## Features
 
+- **Next.js App Router** - Leveraging the latest Next.js features for optimal performance
+- **Invoice Management** - Create, edit, and manage invoices with ease
+- **Payment Tracking** - Mark invoices as paid and track payment status
+- **Email Integration** - Send professional emails using Mailtrap Email API with beautiful templates
+- **PDF Generation** - Real custom PDF generation for invoices
+- **Client Communication** - Send invoices directly to clients and automated reminder emails
+- **Authentication** - Custom auth implementation using Auth.js with Magic Link authentication
+- **Database** - Neon Postgres Database with Prisma ORM
+- **Beautiful UI** - Stunning dashboard with animated charts and modern design
+- **Form Validation** - Server-side validation using Zod and Conform
+- **Styling** - Built with Tailwind CSS and Shadcn UI components
+- **Multi-Currency Support** - Format currency with support for Euros, Dollars, and more
+- **Production Ready** - Optimized for deployment on Vercel
+
+## Important Note About Email Functionality
+
+**You will need your own domain name to use this project in production.**
+
+This project uses Mailtrap for email sending. While Mailtrap provides a demo domain for local development and testing, it does not work in production environments. To deploy this application and have functional email features, you must:
+
+1. Obtain your own domain name
+2. Configure it with Mailtrap or another email service provider
+3. Update the email configuration in the project settings
+
+Without a custom domain, the email functionality (invoice delivery, reminders, magic link authentication) will not work in production.
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org)
+- **Email Service:** [Mailtrap](https://l.rw.rw/jan_marshal)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com) & [Shadcn UI](https://ui.shadcn.com)
+- **Database:** [Neon Postgres](https://neon.tech)
+- **ORM:** [Prisma](https://prisma.io)
+- **Authentication:** [Auth.js](https://authjs.dev/)
+- **Validation:** [Zod](https://zod.dev/) & [Conform](https://conform.guide/)
+- **Deployment:** [Vercel](https://vercel.com/)
+- **UI Components:** [Background Patterns by ibelick](https://ui.ibelick.com/)
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/sameerqureshii/InvoiceSameer.git
+cd InvoiceSameer
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Set up environment variables:
+
+Create a `.env` file in the root directory and add your configuration:
+```env
+DATABASE_URL="your-neon-database-url"
+AUTH_SECRET="your-auth-secret"
+EMAIL_SERVER_USER=smtp@mailtrap.io
+EMAIL_SERVER_PASSWORD="your-password"
+EMAIL_SERVER_HOST=live.smtp.mailtrap.io
+EMAIL_SERVER_PORT=940
+EMAIL_FROM="your-email"
+MAILTRAP_TOKEN"your-mailtrap-api-key"
+```
+
+4. Set up the database:
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+5. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This application is optimized for deployment on Vercel:
 
-## Learn More
+1. Push your code to a GitHub repository
+2. Import the project in Vercel
+3. Configure environment variables
+4. Set up your custom domain for email functionality
+5. Deploy
 
-To learn more about Next.js, take a look at the following resources:
+Remember to configure your domain name with Mailtrap before deploying to production to ensure email features work correctly.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is open source and available under the [MITLicense].
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/sameerqureshii/InvoiceSameer/issues).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+**Sameer Qureshi**
+
+- GitHub: [@sameerqureshii](https://github.com/sameerqureshii)
+- Website: [Sameer Ahmed Qureshi](https://sameer-personall-portfolio.vercel.app)
+## Support
+
+Give a star if this project helped you!
