@@ -70,7 +70,7 @@ EMAIL_SERVER_PASSWORD="your-password"
 EMAIL_SERVER_HOST=live.smtp.mailtrap.io
 EMAIL_SERVER_PORT=940
 EMAIL_FROM="your-email"
-MAILTRAP_TOKEN"your-mailtrap-api-key"
+MAILTRAP_TOKEN="your-mailtrap-api-key"
 ```
 
 4. Set up the database:
